@@ -1,0 +1,38 @@
+/* ==========================================================================
+   تنسيقات بسيطة فوق Bootstrap
+   ========================================================================== */
+
+body {
+  background-color: #f4f6fa;
+}
+
+/* شريط العنوان */
+.app-header {
+  background: linear-gradient(135deg, #0d6efd, #0a58ca);
+  color: #ffffff;
+}
+
+/* ترويسة البطاقات */
+.card-header {
+  background-color: #ffffff;
+}
+
+/* صندوق الأخطاء: يختفي تمامًا عندما يكون فارغًا */
+#error-box {
+  margin-bottom: 1rem;
+}
+
+#error-box:empty {
+  display: none;
+}
+
+/* صناديق العرض (قائمة الطلاب + التقرير) */
+.display-box {
+  min-height: 80px;
+}
+
+/* نص إرشادي يظهر فقط عندما يكون الصندوق فارغًا */
+.display-box:empty::before {
+  content: attr(data-placeholder);
+  color: #6c757d;
+}

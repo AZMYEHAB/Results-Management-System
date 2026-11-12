@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>نظام إدارة النتائج</title>
+
+  <!-- Bootstrap 5 (نسخة RTL) عبر CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+
+  <!-- تنسيقاتنا الخاصة فوق Bootstrap -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- العنوان -->
+  <header class="app-header text-center py-4 mb-4">
+    <div class="container">
+      <h1 class="h3 mb-0">نظام إدارة النتائج</h1>
+    </div>
+  </header>
+
+  <main class="container pb-5">
+    <div class="row g-4">
+
+      <!-- ========== عمود الإدخال ========== -->
+      <section class="col-lg-5">
+        <div class="card shadow-sm">
+          <div class="card-header fw-bold">بيانات الطالب</div>
+          <div class="card-body">
+
+            <!-- اسم الطالب (Text) -->
+            <div class="mb-3">
+              <label for="student-name" class="form-label">اسم الطالب</label>
+              <input type="text" id="student-name" class="form-control" placeholder="اكتب اسم الطالب" autocomplete="off">
+            </div>
+
+            <!-- درجات المواد الثلاث (Number) -->
+            <div class="row g-3 mb-3">
+              <div class="col-sm-4">
+                <label for="grade1" class="form-label">المادة الأولى</label>
+                <input type="number" id="grade1" class="form-control" placeholder="0 - 100" min="0" max="100" step="1">
+              </div>
+              <div class="col-sm-4">
+                <label for="grade2" class="form-label">المادة الثانية</label>
+                <input type="number" id="grade2" class="form-control" placeholder="0 - 100" min="0" max="100" step="1">
+              </div>
+              <div class="col-sm-4">
+                <label for="grade3" class="form-label">المادة الثالثة</label>
+                <input type="number" id="grade3" class="form-control" placeholder="0 - 100" min="0" max="100" step="1">
+              </div>
+            </div>
+
+            <!-- نسبة الحضور (Number) -->
+            <div class="mb-3">
+              <label for="attendance" class="form-label">نسبة الحضور (%)</label>
+              <input type="number" id="attendance" class="form-control" placeholder="0 - 100" min="0" max="100" step="1">
+            </div>
+
+            <!-- صندوق رسائل الخطأ (فارغ في البداية، ويُخفى تلقائيًا ما دام فارغًا) -->
+            <div id="error-box" class="alert alert-danger" role="alert"></div>
+
+            <!-- أزرار التحكم -->
+            <div class="d-grid gap-2 d-sm-flex">
+              <button type="button" id="add-student-btn" class="btn btn-primary flex-fill">إضافة طالب</button>
+              <button type="button" id="grace-btn" class="btn btn-warning flex-fill">تفعيل لجنة الرأفة</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== عمود العرض ========== -->
+      <section class="col-lg-7">
+
+        <!-- قائمة الطلاب الذين تمت إضافتهم -->
+        <div class="card shadow-sm mb-4">
+          <div class="card-header fw-bold">قائمة الطلاب</div>
+          <div class="card-body">
+            <div id="students-list" class="display-box" data-placeholder="لم تتم إضافة أي طالب بعد."></div>
+          </div>
+        </div>
+
+        <!-- التقرير النهائي للجنة الرأفة -->
+        <div class="card shadow-sm">
+          <div class="card-header fw-bold">التقرير النهائي للجنة الرأفة</div>
+          <div class="card-body">
+            <div id="grace-report" class="display-box" data-placeholder="اضغط على «تفعيل لجنة الرأفة» لعرض التقرير."></div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- ملف JavaScript الخاص بالمشروع -->
+  <script src="js/main.js"></script>
+</body>
+</html>
